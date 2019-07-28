@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: 'Lato';
+  background-color: #f2f6f5;
+}
+
+
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(./img/budg-img.jpg);
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-weight: 300;
+  font-size: 52px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #b5bbbb;
+  position: relative;
+  top: 20px;
+  letter-spacing: 10px;
+}
+
+.header h2 {
+  font-weight: 300;
+  font-size: 40px;
+  color: #93b5b3;
+}
+
+
+
+.inp {
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 20px;
+  outline: none;
+  font-size: 16px;
+  border: 2px solid #d7d1c9;
+  padding: 2px;
+  padding-left: 10px;
+}
+
+.inp-price {
+  width: 100px;
+  text-align: center;
+}
+
+.btn {
+  width: 100px;
+  height: 36px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  background-color: #93b5b3;
+  color: white;
+  font-weight: 500;
+  padding: 2px;
+  padding-left: 10px;
+}
+
+.item-name {
+  margin-right: 320px;
+}
+
+.budg-list {
+  width: 540px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.list-name {
+  margin-right: 340px;
+}
+
+.budg-item {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #2e3131;
+  font-weight: 300;
+  font-size: 18px;
+  list-style: none;
+}
+
+.list-head {
+  margin-bottom: 20px;
+  color: #618381;
+}
