@@ -42,6 +42,8 @@ class App extends React.Component {
     this.setState({
       items: filteredItems
     });
+
+    this.calcBudget()
   }
 
   handleClearList() {
