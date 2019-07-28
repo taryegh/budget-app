@@ -106,7 +106,7 @@ body {
 }
 
 .btn-del {
-  background-color: salmon;
+  background-color: #ff7675;
   height: 30px;
   border: none;
   width: 40px;
@@ -114,15 +114,15 @@ body {
 }
 
 .btn-del:hover{
-  background-color: rgb(201, 83, 70);
+  background-color: #ff4444;
 }
 
 .btn-clear-list {
   width: 540px;
   margin-top: 60px;
-  background-color: rgb(168, 130, 120);
+  background-color: #f08f8f;
 }
 
 .btn-clear-list:hover{
-  background-color: rgb(167, 86, 65);
+  background-color: #f67171;
 }
