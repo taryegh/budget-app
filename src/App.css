@@ -70,11 +70,11 @@ body {
 }
 
 .item-name {
-  margin-right: 320px;
+
 }
 
 .budg-list {
-  width: 540px;
+  width: 460px;
   display: inline-block;
   margin-top: 20px;
 }
@@ -95,4 +95,9 @@ body {
 .list-head {
   margin-bottom: 20px;
   color: #618381;
+}
+
+.budg-inner {
+  display: flex;
+  justify-content: space-between;
 }

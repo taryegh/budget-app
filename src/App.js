@@ -12,12 +12,13 @@ class App extends React.Component {
       items: [],
       id: 1 + Math.random(),
       itemName: "",
-      itemPrice: ""
+      itemPrice: "",
+      count: 0
     };
 
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangePrice = this.handleChangePrice.bind(this);
-    this.handleSubmit=this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChangeName(e) {
@@ -34,29 +35,39 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    
-    const newItem = {
-      id: this.state.id,
-      itemName: this.state.itemName,
-      itemPrice: this.state.itemPrice
-    };
 
-    const updatesItems = [...this.state.items, newItem];
+    if ((this.state.itemName && this.state.itemPrice) && !isNaN(this.state.itemPrice)) {
+      const newItem = {
+        id: this.state.id,
+        itemName: this.state.itemName,
+        itemPrice: this.state.itemPrice
+      };
 
-    this.setState({
-      items: updatesItems,
-      id: 1 + Math.random(),
-      itemName: "",
-      itemPrice: ""
+      const updatesItems = [...this.state.items, newItem];
+
+      this.setState({
+        items: updatesItems,
+        id: 1 + Math.random(),
+        itemName: "",
+        itemPrice: ""
+      });
+
+      this.calcBudget();
+    }
+  }
+
+  calcBudget() {
+    this.setState(prevState => {
+      return {
+        count: prevState.count + +this.state.itemPrice
+      };
     });
-
-    console.log(this.state);
   }
 
   render() {
     return (
       <div className="container">
-        <Header />
+        <Header sum={this.state.count} />
         <BudgetInput
           itemName={this.state.itemName}
           itemPrice={this.state.itemPrice}
@@ -64,9 +75,7 @@ class App extends React.Component {
           handleChangePrice={this.handleChangePrice}
           handleSubmit={this.handleSubmit}
         />
-        <BudgetList 
-          items={this.state.items}
-        />
+        <BudgetList items={this.state.items} sum={this.state.sum} />
       </div>
     );
   }
