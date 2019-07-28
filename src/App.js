@@ -21,8 +21,8 @@ class App extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSubmitAndCalc = this.handleSubmitAndCalc.bind(this);
+    this.handleClearList = this.handleClearList.bind(this);
   }
-
 
   handleChangeName(e) {
     this.setState({
@@ -44,8 +44,15 @@ class App extends React.Component {
     });
   }
 
-  handleSubmit() {
+  handleClearList() {
+    this.setState({
+      items: []
+    });
 
+    this.calcBudget();
+  }
+
+  handleSubmit() {
     if (
       this.state.itemName &&
       this.state.itemPrice &&
@@ -73,22 +80,21 @@ class App extends React.Component {
       const num = this.state.items.map(el => {
         return +el.itemPrice;
       });
-  
+
       let sum = 0;
       for (let i = 0; i < num.length; i++) {
         sum += num[i];
       }
-  
+
       this.setState({
         count: sum
       });
     }, 0);
-
   }
 
   handleSubmitAndCalc(e) {
     e.preventDefault();
-    
+
     this.handleSubmit();
     this.calcBudget();
   }
@@ -107,6 +113,7 @@ class App extends React.Component {
         <BudgetList
           items={this.state.items}
           handleDelete={this.handleDelete}
+          handleClearList={this.handleClearList}
         />
       </div>
     );

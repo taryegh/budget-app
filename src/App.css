@@ -116,3 +116,13 @@ body {
 .btn-del:hover{
   background-color: rgb(201, 83, 70);
 }
+
+.btn-clear-list {
+  width: 540px;
+  margin-top: 60px;
+  background-color: rgb(168, 130, 120);
+}
+
+.btn-clear-list:hover{
+  background-color: rgb(167, 86, 65);
+}
