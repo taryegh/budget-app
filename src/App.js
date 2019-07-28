@@ -19,6 +19,8 @@ class App extends React.Component {
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangePrice = this.handleChangePrice.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleSubmitAndCalc = this.handleSubmitAndCalc.bind(this);
   }
 
   handleChangeName(e) {
@@ -33,10 +35,21 @@ class App extends React.Component {
     });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  handleDelete(id) {
+    const filteredItems = this.state.items.filter(el => el.id !== id);
 
-    if ((this.state.itemName && this.state.itemPrice) && !isNaN(this.state.itemPrice)) {
+    this.setState({
+      items: filteredItems
+    });
+  }
+
+  handleSubmit() {
+
+    if (
+      this.state.itemName &&
+      this.state.itemPrice &&
+      !isNaN(this.state.itemPrice)
+    ) {
       const newItem = {
         id: this.state.id,
         itemName: this.state.itemName,
@@ -51,31 +64,46 @@ class App extends React.Component {
         itemName: "",
         itemPrice: ""
       });
-
-      this.calcBudget();
     }
   }
 
   calcBudget() {
-    this.setState(prevState => {
-      return {
-        count: prevState.count + +this.state.itemPrice
-      };
+    const num = this.state.items.map(el => {
+      return +el.itemPrice;
     });
+
+    let sum = 0;
+    for (let i = 0; i < num.length; i++) {
+      sum += num[i];
+    }
+
+    this.setState({
+      count: sum
+    });
+  }
+
+  handleSubmitAndCalc(e) {
+    e.preventDefault();
+    
+    this.handleSubmit();
+    this.calcBudget();
   }
 
   render() {
     return (
       <div className="container">
-        <Header sum={this.state.count} />
+        <Header count={this.state.count} />
         <BudgetInput
           itemName={this.state.itemName}
           itemPrice={this.state.itemPrice}
           handleChangeName={this.handleChangeName}
           handleChangePrice={this.handleChangePrice}
-          handleSubmit={this.handleSubmit}
+          handleSubmitAndCalc={this.handleSubmitAndCalc}
         />
-        <BudgetList items={this.state.items} sum={this.state.sum} />
+        <BudgetList
+          items={this.state.items}
+          handleDelete={this.handleDelete}
+        />
       </div>
     );
   }

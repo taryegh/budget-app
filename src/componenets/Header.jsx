@@ -5,7 +5,8 @@ class Header extends React.Component {
     return (
       <div className="header">
         <h1>Budget Manager</h1>
-        <h2>$ {this.props.sum}</h2>
+
+        <h2>$ {this.props.count}</h2>
       </div>
     );
   }

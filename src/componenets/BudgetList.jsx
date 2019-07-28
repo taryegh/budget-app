@@ -16,6 +16,7 @@ class BudgetList extends React.Component {
               key={el.id}
               name={el.itemName}
               price={el.itemPrice}
+              handleDelete={() => this.props.handleDelete(el.id)}
             />
           )
         })}

@@ -4,7 +4,7 @@ class BudgetInput extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit} action="">
+        <form onSubmit={this.props.handleSubmitAndCalc} action="">
           <input
             className="inp"
             type="text"

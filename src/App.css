@@ -67,20 +67,23 @@ body {
   font-weight: 500;
   padding: 2px;
   padding-left: 10px;
+  cursor: pointer;
 }
 
-.item-name {
-
+.btn:hover{
+  background-color: #6a918e;
 }
+
 
 .budg-list {
-  width: 430px;
+  width: 530px;
   display: inline-block;
   margin-top: 20px;
 }
 
 .list-name {
-  margin-right: 340px;
+  margin-right: 210px;
+  margin-left: -230px;
 }
 
 .budg-item {
@@ -100,4 +103,16 @@ body {
 .budg-inner {
   display: flex;
   justify-content: space-between;
+}
+
+.btn-del {
+  background-color: salmon;
+  height: 30px;
+  border: none;
+  width: 40px;
+  padding-right: 10px;
+}
+
+.btn-del:hover{
+  background-color: rgb(201, 83, 70);
 }
