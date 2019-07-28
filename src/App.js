@@ -23,6 +23,7 @@ class App extends React.Component {
     this.handleSubmitAndCalc = this.handleSubmitAndCalc.bind(this);
   }
 
+
   handleChangeName(e) {
     this.setState({
       itemName: e.target.value
@@ -68,18 +69,21 @@ class App extends React.Component {
   }
 
   calcBudget() {
-    const num = this.state.items.map(el => {
-      return +el.itemPrice;
-    });
+    setTimeout(() => {
+      const num = this.state.items.map(el => {
+        return +el.itemPrice;
+      });
+  
+      let sum = 0;
+      for (let i = 0; i < num.length; i++) {
+        sum += num[i];
+      }
+  
+      this.setState({
+        count: sum
+      });
+    }, 0);
 
-    let sum = 0;
-    for (let i = 0; i < num.length; i++) {
-      sum += num[i];
-    }
-
-    this.setState({
-      count: sum
-    });
   }
 
   handleSubmitAndCalc(e) {
