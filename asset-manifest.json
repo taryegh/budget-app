@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/budget-app-react/static/css/main.4866fb01.chunk.css",
-    "main.js": "/budget-app-react/static/js/main.3b2b1ba6.chunk.js",
-    "main.js.map": "/budget-app-react/static/js/main.3b2b1ba6.chunk.js.map",
+    "main.css": "/budget-app-react/static/css/main.5c3f356f.chunk.css",
+    "main.js": "/budget-app-react/static/js/main.fd50786b.chunk.js",
+    "main.js.map": "/budget-app-react/static/js/main.fd50786b.chunk.js.map",
     "runtime~main.js": "/budget-app-react/static/js/runtime~main.1813f2d0.js",
     "runtime~main.js.map": "/budget-app-react/static/js/runtime~main.1813f2d0.js.map",
     "static/js/2.8d89fcb1.chunk.js": "/budget-app-react/static/js/2.8d89fcb1.chunk.js",
     "static/js/2.8d89fcb1.chunk.js.map": "/budget-app-react/static/js/2.8d89fcb1.chunk.js.map",
     "index.html": "/budget-app-react/index.html",
-    "precache-manifest.6db51fd59d10f8e3b4779a0a1b1b4e60.js": "/budget-app-react/precache-manifest.6db51fd59d10f8e3b4779a0a1b1b4e60.js",
+    "precache-manifest.6e4012e7f33f7b19075dfa894fcf6a4a.js": "/budget-app-react/precache-manifest.6e4012e7f33f7b19075dfa894fcf6a4a.js",
     "service-worker.js": "/budget-app-react/service-worker.js",
-    "static/css/main.4866fb01.chunk.css.map": "/budget-app-react/static/css/main.4866fb01.chunk.css.map",
+    "static/css/main.5c3f356f.chunk.css.map": "/budget-app-react/static/css/main.5c3f356f.chunk.css.map",
     "static/media/App.css": "/budget-app-react/static/media/budg-img.3e3e2419.jpg"
   }
 }
