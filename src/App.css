@@ -70,7 +70,7 @@ body {
   cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #6a918e;
 }
 
@@ -113,7 +113,7 @@ body {
   padding-right: 10px;
 }
 
-.btn-del:hover{
+.btn-del:hover {
   background-color: #ff4444;
 }
 
@@ -123,6 +123,16 @@ body {
   background-color: #f08f8f;
 }
 
-.btn-clear-list:hover{
+.btn-clear-list:hover {
   background-color: #f67171;
+}
+
+.sel {
+  width: auto;
+  font-size: 18px;
+  font-weight: 700;
+  color: #444;
+  padding-right: 10px;
+  padding-left: 12px;
+  appearance: none;
 }

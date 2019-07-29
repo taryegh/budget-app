@@ -5,6 +5,11 @@ class BudgetInput extends React.Component {
     return (
       <div>
         <form onSubmit={this.props.handleSubmitAndCalc} action="">
+          <select onChange={this.props.handleSelectOpt} className="inp sel">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+          </select>
+
           <input
             className="inp"
             type="text"

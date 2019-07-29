@@ -13,7 +13,8 @@ class App extends React.Component {
       id: 1 + Math.random(),
       itemName: "",
       itemPrice: "",
-      count: 0
+      count: 0,
+      select: "plus"
     };
 
     this.handleChangeName = this.handleChangeName.bind(this);
@@ -22,6 +23,13 @@ class App extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSubmitAndCalc = this.handleSubmitAndCalc.bind(this);
     this.handleClearList = this.handleClearList.bind(this);
+    this.handleSelectOpt = this.handleSelectOpt.bind(this);
+  }
+
+  handleSelectOpt(e) {
+    this.setState({
+      select: e.target.value
+    });
   }
 
   handleChangeName(e) {
@@ -43,7 +51,7 @@ class App extends React.Component {
       items: filteredItems
     });
 
-    this.calcBudget()
+    this.calcBudget();
   }
 
   handleClearList() {
@@ -63,7 +71,10 @@ class App extends React.Component {
       const newItem = {
         id: this.state.id,
         itemName: this.state.itemName,
-        itemPrice: this.state.itemPrice
+        itemPrice:
+          this.state.select === "plus"
+            ? this.state.itemPrice
+            : -this.state.itemPrice
       };
 
       const updatesItems = [...this.state.items, newItem];
@@ -72,9 +83,10 @@ class App extends React.Component {
         items: updatesItems,
         id: 1 + Math.random(),
         itemName: "",
-        itemPrice: ""
+        itemPrice: "",
       });
     }
+    console.log(this.state.select);
   }
 
   calcBudget() {
@@ -111,6 +123,7 @@ class App extends React.Component {
           handleChangeName={this.handleChangeName}
           handleChangePrice={this.handleChangePrice}
           handleSubmitAndCalc={this.handleSubmitAndCalc}
+          handleSelectOpt={this.handleSelectOpt}
         />
         <BudgetList
           items={this.state.items}
