@@ -47,19 +47,25 @@ class App extends React.Component {
   handleDelete(id) {
     const filteredItems = this.state.items.filter(el => el.id !== id);
 
-    this.setState({
-      items: filteredItems
-    });
-
-    this.calcBudget();
+    this.setState(
+      {
+        items: filteredItems
+      },
+      () => {
+        this.calcBudget();
+      }
+    );
   }
 
   handleClearList() {
-    this.setState({
-      items: []
-    });
-
-    this.calcBudget();
+    this.setState(
+      {
+        items: []
+      },
+      () => {
+        this.calcBudget();
+      }
+    );
   }
 
   handleSubmit() {
@@ -83,34 +89,34 @@ class App extends React.Component {
         items: updatesItems,
         id: 1 + Math.random(),
         itemName: "",
-        itemPrice: "",
+        itemPrice: ""
       });
     }
     console.log(this.state.select);
   }
 
   calcBudget() {
-    setTimeout(() => {
-      const num = this.state.items.map(el => {
-        return +el.itemPrice;
-      });
+    const num = this.state.items.map(el => {
+      return +el.itemPrice;
+    });
 
-      let sum = 0;
-      for (let i = 0; i < num.length; i++) {
-        sum += num[i];
-      }
+    let sum = 0;
+    for (let i = 0; i < num.length; i++) {
+      sum += num[i];
+    }
 
-      this.setState({
-        count: sum
-      });
-    }, 0);
+    this.setState({
+      count: sum
+    });
   }
 
   handleSubmitAndCalc(e) {
     e.preventDefault();
 
     this.handleSubmit();
-    this.calcBudget();
+    setTimeout(() => {
+      this.calcBudget();
+    }, 0);
   }
 
   render() {
@@ -129,6 +135,7 @@ class App extends React.Component {
           items={this.state.items}
           handleDelete={this.handleDelete}
           handleClearList={this.handleClearList}
+          count={this.state.count}
         />
       </div>
     );

@@ -33,7 +33,7 @@ body {
 
 .header h2 {
   font-weight: 300;
-  font-size: 40px;
+  font-size: 46px;
   color: #93b5b3;
 }
 
@@ -136,4 +136,13 @@ body {
   padding-left: 12px;
   appearance: none;
   cursor: pointer;
+}
+
+.percent {
+  margin-left: 20px; 
+  font-size: 14px;
+  font-style: italic;
+  color: #596363;
+  text-decoration: i;
+  position: absolute;
 }

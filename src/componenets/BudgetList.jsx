@@ -17,6 +17,7 @@ class BudgetList extends React.Component {
               name={el.itemName}
               price={el.itemPrice}
               handleDelete={() => this.props.handleDelete(el.id)}
+              count={this.props.count}
             />
           );
         })}
